@@ -1,0 +1,1901 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/26/2022 12:11:02 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-RTNJS8F"
+  DTS:CreatorName="DESKTOP-RTNJS8F\CuongPN"
+  DTS:DTSID="{7D4F5EF9-C59C-4C94-87C6-7048B1DD1CEB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{B677736A-B943-4920-B264-DF484A6427DE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A768DF71-B28F-4C6C-A57D-0981EE2B7A8D}"
+      DTS:ObjectName="DESKTOP-RTNJS8F\CUONGPHAM.covidNDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-RTNJS8F\CUONGPHAM;Initial Catalog=covidNDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{A768DF71-B28F-4C6C-A57D-0981EE2B7A8D}DESKTOP-RTNJS8F\CUONGPHAM.covidNDS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.Stage]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D78478D8-21C1-4134-AEC3-7E645924DEC5}"
+      DTS:ObjectName="DESKTOP-RTNJS8F\CUONGPHAM.Stage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-RTNJS8F\CUONGPHAM;Initial Catalog=Stage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{D78478D8-21C1-4134-AEC3-7E645924DEC5}DESKTOP-RTNJS8F\CUONGPHAM.Stage;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{BB790D90-ED34-48AA-B652-8BDDDE81608B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[lastModifiedAt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[lastModifiedAt]"
+                      name="lastModifiedAt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[createdAt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[createdAt]"
+                      name="createdAt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[lastModifiedAt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[lastModifiedAt]"
+                      name="lastModifiedAt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select minage,maxage,note from AgeGroup</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (Select minage,maxage,note from AgeGroup) [refTable]
+where [refTable].[minage] = ? and [refTable].[maxage] = ? and [refTable].[note] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="minage" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="maxage" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="note" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]};#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]};#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[note]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="37"
+                      cachedName="note"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">note</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[min_age]"
+                      cachedDataType="i4"
+                      cachedName="min_age"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">minage</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[max_age]"
+                      cachedDataType="i4"
+                      cachedName="max_age"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">maxage</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[note]"
+                      name="note"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">note</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[maxage]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[maxage]"
+                      name="maxage"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">maxage</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[minage]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[minage]"
+                      name="minage"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">minage</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">update AgeGroup
+set lastModifiedAt = ?
+where minage= ? and maxage=? and note= ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[lastModifiedAt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="lastModifiedAt"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[lastModifiedAt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[note]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="37"
+                      cachedName="note"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[min_age]"
+                      cachedDataType="i4"
+                      cachedName="min_age"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[max_age]"
+                      cachedDataType="i4"
+                      cachedName="max_age"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbDate"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AgeGroup]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[note]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="37"
+                      cachedName="note"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[note]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[createdAt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="createdAt"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[createdAt]"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[createdAt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lastModifiedAt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="lastModifiedAt"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lastModifiedAt]"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[lastModifiedAt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[min_age]"
+                      cachedDataType="i4"
+                      cachedName="min_age"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[minAge]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[max_age]"
+                      cachedDataType="i4"
+                      cachedName="max_age"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[maxAge]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i8"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[minAge]"
+                      dataType="i4"
+                      name="minAge" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[maxAge]"
+                      dataType="i4"
+                      name="maxAge" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="note" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[createdAt]"
+                      dataType="dbDate"
+                      name="createdAt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lastModifiedAt]"
+                      dataType="dbDate"
+                      name="lastModifiedAt" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select Age note,
+  case  
+  when age ='12-17yrs' then 12
+  when age ='05-11yrs' then 5
+  when age ='18-29yrs' then 18
+  when age ='30-39yrs' then 30
+  when age ='40-49yrs' then 40
+  when age ='50-59yrs' then 50
+  when age ='60-69yrs' then 60
+  when age ='70-79yrs' then 70
+  when age ='Adults_18plus' then 18
+  when age ='Ontario_12plus' then 12
+  when age ='Ontario_5plus' then 5
+  when age ='80+' then 80
+  when age ='Undisclosed_or_missing' then NULL
+  
+  end  as min_age,
+  case  
+  when age ='12-17yrs' then 17
+  when age ='05-11yrs' then 11
+  when age ='18-29yrs' then 29
+  when age ='30-39yrs' then 39
+  when age ='40-49yrs' then 49
+  when age ='50-59yrs' then 59
+  when age ='60-69yrs' then 69
+  when age ='70-79yrs' then 79
+  when age ='Adults_18plus' then NULL
+  when age ='Ontario_12plus' then NULL
+  when age ='Ontario_5plus' then NULL
+  when age ='80+' then NULL
+  when age ='Undisclosed_or_missing' then NULL
+  
+  end  as max_age
+  
+  from Vacxin_by_age_Stage
+  group by age;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.Stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[min_age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[min_age]"
+                      name="min_age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[max_age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[max_age]"
+                      name="max_age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[note]"
+                      length="22"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[note]"
+                      name="note"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
+                      dataType="i4"
+                      name="min_age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
+                      dataType="i4"
+                      name="max_age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="note" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[min_age]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[min_age]"
+                      name="min_age" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[max_age]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[max_age]"
+                      name="max_age" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[note]"
+                      name="note" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source 1"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source 1"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select age_group as note ,
+  case  
+  when age_group ='&lt;20' then NULL
+  when age_group ='20-29' then 20
+  when age_group ='30-39' then 30
+  when age_group ='40-49' then 40
+  when age_group ='50-59' then 50
+  when age_group ='60-69' then 60
+  when age_group ='70-79' then 70
+  when age_group ='80+' then 80
+  when age_group ='Not Reported' then NULL
+  end  as min_age,
+  case  
+  when age_group ='&lt;20' then 20
+  when age_group ='20-29' then 29
+  when age_group ='30-39' then 39
+  when age_group ='40-49' then 49
+  when age_group ='50-59' then 59
+  when age_group ='60-69' then 69
+  when age_group ='70-79' then 79
+  when age_group ='80+' then NULL
+  when age_group ='Not Reported' then NULL
+  end  as max_age
+  from [Canada_Case_Report_Stage]
+  group by age_group;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.Stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[min_age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
+                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[min_age]"
+                      name="min_age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[max_age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
+                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[max_age]"
+                      name="max_age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[note]"
+                      length="37"
+                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[note]"
+                      name="note"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
+                      dataType="i4"
+                      name="min_age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
+                      dataType="i4"
+                      name="max_age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="note" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[min_age]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[min_age]"
+                      name="min_age" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[max_age]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[max_age]"
+                      name="max_age" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[note]"
+                      name="note" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source 2"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source 2"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select age_group as note ,
+  case  
+  when age_group ='30s' then 30
+  when age_group ='60s' then 60
+  when age_group ='90+' then 90
+  when age_group ='70s' then 70
+  when age_group ='80s' then 80
+  when age_group ='40s' then 40
+  when age_group ='20s' then 20
+  when age_group ='&lt;20' then NULL
+  when age_group ='50s' then 50
+  end  as min_age,
+  case  
+  when age_group ='30s' then 39
+  when age_group ='60s' then 69
+  when age_group ='90+' then NULL
+  when age_group ='70s' then 79
+  when age_group ='80s' then 89
+  when age_group ='40s' then 49
+  when age_group ='20s' then 29
+  when age_group ='&lt;20' then 19
+  when age_group ='50s' then 59
+  end  as max_age
+  from [Ontario_Case_Report_Stage]
+  group by age_group;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source 2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.Stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[min_age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
+                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[min_age]"
+                      name="min_age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[max_age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
+                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[max_age]"
+                      name="max_age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].ExternalColumns[note]"
+                      length="11"
+                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[note]"
+                      name="note"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
+                      dataType="i4"
+                      name="min_age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
+                      dataType="i4"
+                      name="max_age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].ExternalColumns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="note" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[min_age]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[min_age]"
+                      name="min_age" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[max_age]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[max_age]"
+                      name="max_age" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[note]"
+                      name="note" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[min_age]"
+                      cachedDataType="i4"
+                      cachedName="min_age"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[min_age]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[max_age]"
+                      cachedDataType="i4"
+                      cachedName="max_age"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[max_age]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[note]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="22"
+                      cachedName="note"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[note]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[min_age]"
+                      cachedDataType="i4"
+                      cachedName="min_age"
+                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[min_age]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[max_age]"
+                      cachedDataType="i4"
+                      cachedName="max_age"
+                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[max_age]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[note]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="37"
+                      cachedName="note"
+                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[note]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[min_age]"
+                      cachedDataType="i4"
+                      cachedName="min_age"
+                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[min_age]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[max_age]"
+                      cachedDataType="i4"
+                      cachedName="max_age"
+                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[max_age]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[note]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="note"
+                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[note]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 4]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 4">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]"
+                      name="min_age" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]"
+                      name="max_age" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      length="37"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]"
+                      name="note" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[id]"
+                      dataType="i8"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[id]"
+                      name="id" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output]"
+              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup No Match Output]"
+              endId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\Data Flow Task\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output2]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 3]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Union All Output 1]"
+              endId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
+              name="Union All Output 1"
+              startId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="255.833323167431,112.666667562061" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="228.333324260182,78.8666672934426" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Data Flow Task\Lookup"
+          TopLeft="503.333313332664,358.800002851486" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Data Flow Task\OLE DB Source 1"
+          TopLeft="475.833314425416,77.3333338843452" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Data Flow Task\OLE DB Source 2"
+          TopLeft="734.999970793726,97.2666672934426" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Data Flow Task\Union All"
+          TopLeft="497.499980231127,217.733334917492" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="304.333324260182,120.466667293443">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="225.166655970945,97.2666676240498"
+              Start="0,0"
+              End="225.166655970945,89.7666676240498">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.4347832330759" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59.4347832330759"
+                    Point2="0,63.4347832330759"
+                    Point3="4,63.4347832330759" />
+                  <mssgle:LineSegment
+                    End="221.166655970945,63.4347832330759" />
+                  <mssgle:CubicBezierSegment
+                    Point1="221.166655970945,63.4347832330759"
+                    Point2="225.166655970945,63.4347832330759"
+                    Point3="225.166655970945,67.4347832330759" />
+                  <mssgle:LineSegment
+                    End="225.166655970945,89.7666676240498" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          TopLeft="556.866647328272,118.933333884345">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,98.8000010331473"
+              Start="0,0"
+              End="0,91.3000010331473">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,91.3000010331473" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output2]"
+          TopLeft="815.399970793726,138.866667293443">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-229.899990562599,78.8666676240498"
+              Start="0,0"
+              End="-229.899990562599,71.3666676240498">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.434783233076" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.434783233076"
+                    Point2="0,51.434783233076"
+                    Point3="-4,51.434783233076" />
+                  <mssgle:LineSegment
+                    End="-225.899990562599,51.434783233076" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-225.899990562599,51.434783233076"
+                    Point2="-229.899990562599,51.434783233076"
+                    Point3="-229.899990562599,55.434783233076" />
+                  <mssgle:LineSegment
+                    End="-229.899990562599,71.3666676240498" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="558.616646781896,259.333334917492">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,99.466667933994"
+              Start="0,0"
+              End="0,91.966667933994">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,91.966667933994" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Data Flow Task\OLE DB Command"
+          TopLeft="193.333325650957,535.200003471375" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="204.166658553813,455.800001632373" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="542.266646665998,400.400002851486">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-261.699988112185,55.3999987808862"
+              Start="0,0"
+              End="-261.699988112185,47.8999987808862">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.6248946070193" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.6248946070193"
+                    Point2="0,22.6248946070193"
+                    Point3="-4,22.6248946070193" />
+                  <mssgle:LineSegment
+                    End="-257.699988112185,22.6248946070193" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-257.699988112185,22.6248946070193"
+                    Point2="-261.699988112185,22.6248946070193"
+                    Point3="-261.699988112185,26.6248946070193" />
+                  <mssgle:LineSegment
+                    End="-261.699988112185,47.8999987808862" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-179.041380774843,27.6248946070193,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Data Flow Task\Derived Column 1"
+          TopLeft="693.333305782743,466.200001715024" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
+          TopLeft="577.199979999331,400.400002851486">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="196.933325783412,65.7999988635381"
+              Start="0,0"
+              End="196.933325783412,58.2999988635381">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.8721673680463" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.8721673680463"
+                    Point2="0,26.8721673680463"
+                    Point3="4,26.8721673680463" />
+                  <mssgle:LineSegment
+                    End="192.933325783412,26.8721673680463" />
+                  <mssgle:CubicBezierSegment
+                    Point1="192.933325783412,26.8721673680463"
+                    Point2="196.933325783412,26.8721673680463"
+                    Point3="196.933325783412,30.8721673680463" />
+                  <mssgle:LineSegment
+                    End="196.933325783412,58.2999988635381" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="42.6602761729559,31.8721673680463,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="679.166639679009,568.466669194434" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="774.133305782743,507.800001715025">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.36666610373391,60.666667479409"
+              Start="0,0"
+              End="-9.36666610373391,53.166667479409">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.3333337397045" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.3333337397045"
+                    Point2="0,30.3333337397045"
+                    Point3="-4,30.3333337397045" />
+                  <mssgle:LineSegment
+                    End="-5.36666610373391,30.3333337397045" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.36666610373391,30.3333337397045"
+                    Point2="-9.36666610373391,30.3333337397045"
+                    Point3="-9.36666610373391,34.3333337397045" />
+                  <mssgle:LineSegment
+                    End="-9.36666610373391,53.166667479409" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="278.749992102385,497.400001632373">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.8000018390019"
+              Start="0,0"
+              End="0,30.3000018390019">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.3000018390019" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

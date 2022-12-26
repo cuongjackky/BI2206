@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="12/23/2022 9:35:14 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{FC868FDA-ACD5-4246-AFE0-C252DC334479}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{94520999-EEC2-4708-97DD-442EEB8A41A2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2251,21 +2251,21 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Cap Nhat  LSET"
+          TopLeft="324.999987085661,353.60000281016" />
+        <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
           TopLeft="341.666653090054,255.666668698523" />
-        <NodeLayout
-          Size="282.4,41.6"
-          Id="Package\Truncate bang Ontario_Case_Report_Stage"
-          TopLeft="314.166654182806,71.9333339050081" />
         <NodeLayout
           Size="124,41.6"
           Id="Package\Lay LSET"
           TopLeft="329.166653586759,169.000001343091" />
         <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\Cap Nhat  LSET"
-          TopLeft="324.999987085661,353.60000281016" />
+          Size="282.4,41.6"
+          Id="Package\Truncate bang Ontario_Case_Report_Stage"
+          TopLeft="314.166654182806,71.9333339050081" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="455.366654182806,113.533333905008">
@@ -2375,7 +2375,7 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Data Flow Task\OLE DB Destination"
@@ -2415,9 +2415,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

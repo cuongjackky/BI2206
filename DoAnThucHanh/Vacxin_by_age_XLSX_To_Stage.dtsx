@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="12/25/2022 10:24:58 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{B27FAC85-75B5-4888-8C39-D75263256E71}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{C1C9ED3D-013C-4746-838D-A1F81869C2A3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -106,6 +106,14 @@
                 <input
                   refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
                   name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Agegroup]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Agegroup"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Agegroup]" />
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -115,6 +123,30 @@
                   exclusionGroup="1"
                   name="Data Conversion Output"
                   synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Agegroup]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Agegroup]"
+                      name="Copy of Agegroup"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Agegroup]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -470,12 +502,20 @@
                       cachedName="At least one dose_cumulative"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[At_least_one_dose_cumulative]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[At least one dose_cumulative]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Agegroup]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of Agegroup"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Agegroup]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VxID]"
-                      dataType="i4"
+                      dataType="i8"
                       name="VxID" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateReported]"
@@ -483,9 +523,7 @@
                       name="DateReported" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PhuID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
+                      dataType="i8"
                       name="PhuID" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[At_least_one_dose_cumulative]"
@@ -503,6 +541,12 @@
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[third_dose_cumulative]"
                       dataType="i4"
                       name="third_dose_cumulative" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -624,21 +668,21 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Cap Nhat LSET"
+          TopLeft="441.233324160841,411.6666699383" />
+        <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
           TopLeft="449.999982118608,283.40000225226" />
-        <NodeLayout
-          Size="252,41.6"
-          Id="Package\Truncate bang Vacxin_by_age_Stage"
-          TopLeft="392.899992748102,84.0666673347685" />
         <NodeLayout
           Size="124,41.6"
           Id="Package\Lay LSET"
           TopLeft="472.899989569188,178.533334752189" />
         <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\Cap Nhat LSET"
-          TopLeft="441.233324160841,411.6666699383" />
+          Size="252,41.6"
+          Id="Package\Truncate bang Vacxin_by_age_Stage"
+          TopLeft="392.899992748102,84.0666673347685" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="518.899992748102,125.666667334769">
@@ -750,13 +794,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="156,41.6"
+          Id="Package\Data Flow Task\Data Conversion"
+          TopLeft="346.666652891372,196.733334896829" />
+        <NodeLayout
           Size="140,41.6"
           Id="Package\Data Flow Task\Excel Source"
           TopLeft="370.833318597741,82.3333339876599" />
         <NodeLayout
-          Size="156,41.6"
-          Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="346.666652891372,196.733334896829" />
+          Size="171.2,41.6"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="370.833318597741,299.866669049793" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Excel Source Output]"
           TopLeft="440.833318597741,123.93333398766">
@@ -791,36 +839,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="370.833318597741,299.866669049793" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output]"
           TopLeft="424.666652891372,238.333334896829">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="31.7666657063696,61.5333341529635"
+              EndConnector="31.7666657063691,61.533334152964"
               Start="0,0"
-              End="31.7666657063696,54.0333341529635">
+              End="31.7666657063691,54.033334152964">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.7666670764818" />
+                    End="0,26.766667076482" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.7666670764818"
-                    Point2="0,30.7666670764818"
-                    Point3="4,30.7666670764818" />
+                    Point1="0,26.766667076482"
+                    Point2="0,30.766667076482"
+                    Point3="4,30.766667076482" />
                   <mssgle:LineSegment
-                    End="27.7666657063696,30.7666670764818" />
+                    End="27.7666657063691,30.766667076482" />
                   <mssgle:CubicBezierSegment
-                    Point1="27.7666657063696,30.7666670764818"
-                    Point2="31.7666657063696,30.7666670764818"
-                    Point3="31.7666657063696,34.7666670764818" />
+                    Point1="27.7666657063691,30.766667076482"
+                    Point2="31.7666657063691,30.766667076482"
+                    Point3="31.7666657063691,34.766667076482" />
                   <mssgle:LineSegment
-                    End="31.7666657063696,54.0333341529635" />
+                    End="31.7666657063691,54.033334152964" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

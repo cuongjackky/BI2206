@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{B677736A-B943-4920-B264-DF484A6427DE}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{A69121B0-B760-4740-940D-089DB88062A7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -58,400 +58,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Derived Column"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[lastModifiedAt]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[lastModifiedAt]"
-                      name="lastModifiedAt"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[GETDATE]()</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">GETDATE()</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\Derived Column 1"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column 1"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[createdAt]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[createdAt]"
-                      name="createdAt"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[GETDATE]()</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">GETDATE()</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[lastModifiedAt]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[lastModifiedAt]"
-                      name="lastModifiedAt"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[GETDATE]()</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">GETDATE()</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\Lookup"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select minage,maxage,note from AgeGroup</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (Select minage,maxage,note from AgeGroup) [refTable]
-where [refTable].[minage] = ? and [refTable].[maxage] = ? and [refTable].[note] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="minage" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="maxage" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="note" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]};#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]};#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[note]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="37"
-                      cachedName="note"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">note</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[min_age]"
-                      cachedDataType="i4"
-                      cachedName="min_age"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">minage</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[max_age]"
-                      cachedDataType="i4"
-                      cachedName="max_age"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">maxage</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[note]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Copy Column"
-                      length="100"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[note]"
-                      name="note"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">note</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[maxage]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[maxage]"
-                      name="maxage"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">maxage</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[minage]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[minage]"
-                      name="minage"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">minage</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\OLE DB Command"
+              refId="Package\Data Flow Task\cap nhat agegroup"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command"
+              name="cap nhat agegroup"
               usesDispositions="true"
               version="2">
               <properties>
@@ -474,7 +85,7 @@ where minage= ? and maxage=? and note= ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Command.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task\cap nhat agegroup.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
                   description="The OLE DB runtime connection used to access the database."
@@ -482,43 +93,43 @@ where minage= ? and maxage=? and note= ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+                  refId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input]"
                   errorOrTruncationOperation="Command Execution"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[lastModifiedAt]"
+                      refId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input].Columns[lastModifiedAt]"
                       cachedDataType="dbTimeStamp"
                       cachedName="lastModifiedAt"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[lastModifiedAt]" />
+                      externalMetadataColumnId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Data Flow Task\Them cot ngaycapnhat.Outputs[Derived Column Output].Columns[lastModifiedAt]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[note]"
+                      refId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input].Columns[note]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="37"
                       cachedName="note"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      externalMetadataColumnId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[min_age]"
+                      refId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input].Columns[min_age]"
                       cachedDataType="i4"
                       cachedName="min_age"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[max_age]"
+                      refId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input].Columns[max_age]"
                       cachedDataType="i4"
                       cachedName="max_age"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      externalMetadataColumnId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      refId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       dataType="dbDate"
                       name="Param_0">
                       <properties>
@@ -529,7 +140,7 @@ where minage= ? and maxage=? and note= ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      refId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       dataType="i4"
                       name="Param_1">
                       <properties>
@@ -540,7 +151,7 @@ where minage= ? and maxage=? and note= ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      refId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="i4"
                       name="Param_2">
                       <properties>
@@ -551,7 +162,7 @@ where minage= ? and maxage=? and note= ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      refId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       codePage="1252"
                       dataType="str"
                       length="100"
@@ -568,29 +179,29 @@ where minage= ? and maxage=? and note= ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Output]"
+                  refId="Package\Data Flow Task\cap nhat agegroup.Outputs[OLE DB Command Output]"
                   exclusionGroup="1"
                   name="OLE DB Command Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  refId="Package\Data Flow Task\cap nhat agegroup.Outputs[OLE DB Command Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\cap nhat agegroup.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\cap nhat agegroup.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\cap nhat agegroup.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\cap nhat agegroup.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -599,13 +210,13 @@ where minage= ? and maxage=? and note= ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination"
+              refId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Lay nhom tuoi tu canada_case_report"
               usesDispositions="true"
-              version="4">
+              version="7">
               <properties>
                 <property
                   dataType="System.Int32"
@@ -614,7 +225,7 @@ where minage= ? and maxage=? and note= ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[AgeGroup]</property>
+                  name="OpenRowset"></property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -623,7 +234,35 @@ where minage= ? and maxage=? and note= ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select age_group as note ,
+  case  
+  when age_group ='&lt;20' then NULL
+  when age_group ='20-29' then 20
+  when age_group ='30-39' then 30
+  when age_group ='40-49' then 40
+  when age_group ='50-59' then 50
+  when age_group ='60-69' then 60
+  when age_group ='70-79' then 70
+  when age_group ='80+' then 80
+  when age_group ='Not Reported' then NULL
+  end  as min_age,
+  case  
+  when age_group ='&lt;20' then 20
+  when age_group ='20-29' then 29
+  when age_group ='30-39' then 39
+  when age_group ='40-49' then 49
+  when age_group ='50-59' then 59
+  when age_group ='60-69' then 69
+  when age_group ='70-79' then 79
+  when age_group ='80+' then NULL
+  when age_group ='Not Reported' then NULL
+  end  as max_age
+  from [Canada_Case_Report_Stage]
+  group by age_group;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -636,122 +275,105 @@ where minage= ? and maxage=? and note= ?</property>
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
+                  refId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.Stage]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[note]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="37"
-                      cachedName="note"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[note]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[createdAt]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="createdAt"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[createdAt]"
-                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[createdAt]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lastModifiedAt]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="lastModifiedAt"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lastModifiedAt]"
-                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[lastModifiedAt]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[min_age]"
-                      cachedDataType="i4"
-                      cachedName="min_age"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[minAge]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[max_age]"
-                      cachedDataType="i4"
-                      cachedName="max_age"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[maxAge]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]" />
-                  </inputColumns>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output].Columns[min_age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output].Columns[min_age]"
+                      name="min_age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output].Columns[max_age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output].Columns[max_age]"
+                      name="max_age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output].Columns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output].ExternalColumns[note]"
+                      length="37"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output].Columns[note]"
+                      name="note"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
-                      dataType="i8"
-                      name="ID" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[minAge]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
                       dataType="i4"
-                      name="minAge" />
+                      name="min_age" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[maxAge]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
                       dataType="i4"
-                      name="maxAge" />
+                      name="max_age" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[note]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output].ExternalColumns[note]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="50"
                       name="note" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[createdAt]"
-                      dataType="dbDate"
-                      name="createdAt" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lastModifiedAt]"
-                      dataType="dbDate"
-                      name="lastModifiedAt" />
                   </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
+                </output>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
+                  refId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Error Output].Columns[min_age]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Error Output].Columns[min_age]"
+                      name="min_age" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Error Output].Columns[max_age]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Error Output].Columns[max_age]"
+                      name="max_age" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Error Output].Columns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Error Output].Columns[note]"
+                      name="note" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -760,11 +382,11 @@ where minage= ? and maxage=? and note= ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Source"
+              refId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source"
+              name="Lay nhom tuoi tu nguon Vaccine_Stage"
               usesDispositions="true"
               version="7">
               <properties>
@@ -844,7 +466,7 @@ where minage= ? and maxage=? and note= ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.Stage]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.Stage]"
                   description="The OLE DB runtime connection used to access the database."
@@ -852,51 +474,51 @@ where minage= ? and maxage=? and note= ?</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[min_age]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output].Columns[min_age]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[min_age]"
+                      externalMetadataColumnId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output].Columns[min_age]"
                       name="min_age"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[max_age]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output].Columns[max_age]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[max_age]"
+                      externalMetadataColumnId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output].Columns[max_age]"
                       name="max_age"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[note]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output].Columns[note]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[note]"
+                      externalMetadataColumnId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output].ExternalColumns[note]"
                       length="22"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[note]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output].Columns[note]"
                       name="note"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
                       dataType="i4"
                       name="min_age" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
                       dataType="i4"
                       name="max_age" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[note]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output].ExternalColumns[note]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -904,37 +526,37 @@ where minage= ? and maxage=? and note= ?</property>
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[min_age]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Error Output].Columns[min_age]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[min_age]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Error Output].Columns[min_age]"
                       name="min_age" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[max_age]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Error Output].Columns[max_age]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[max_age]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Error Output].Columns[max_age]"
                       name="max_age" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[note]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Error Output].Columns[note]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[note]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Error Output].Columns[note]"
                       name="note" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -943,183 +565,11 @@ where minage= ? and maxage=? and note= ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Source 1"
+              refId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source 1"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select age_group as note ,
-  case  
-  when age_group ='&lt;20' then NULL
-  when age_group ='20-29' then 20
-  when age_group ='30-39' then 30
-  when age_group ='40-49' then 40
-  when age_group ='50-59' then 50
-  when age_group ='60-69' then 60
-  when age_group ='70-79' then 70
-  when age_group ='80+' then 80
-  when age_group ='Not Reported' then NULL
-  end  as min_age,
-  case  
-  when age_group ='&lt;20' then 20
-  when age_group ='20-29' then 29
-  when age_group ='30-39' then 39
-  when age_group ='40-49' then 49
-  when age_group ='50-59' then 59
-  when age_group ='60-69' then 69
-  when age_group ='70-79' then 79
-  when age_group ='80+' then NULL
-  when age_group ='Not Reported' then NULL
-  end  as max_age
-  from [Canada_Case_Report_Stage]
-  group by age_group;</property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">2</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\OLE DB Source 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.Stage]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.Stage]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[min_age]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
-                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[min_age]"
-                      name="min_age"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[max_age]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
-                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[max_age]"
-                      name="max_age"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[note]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[note]"
-                      length="37"
-                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[note]"
-                      name="note"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
-                      dataType="i4"
-                      name="min_age" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
-                      dataType="i4"
-                      name="max_age" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[note]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="note" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[min_age]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[min_age]"
-                      name="min_age" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[max_age]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[max_age]"
-                      name="max_age" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[note]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[note]"
-                      name="note" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\OLE DB Source 2"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="OLE DB Source 2"
+              name="Lay nhom tuoi tu Ontario_Case_report"
               usesDispositions="true"
               version="7">
               <properties>
@@ -1188,7 +638,7 @@ where minage= ? and maxage=? and note= ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Source 2.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.Stage]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.Stage]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1196,51 +646,51 @@ where minage= ? and maxage=? and note= ?</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output]"
+                  refId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[min_age]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output].Columns[min_age]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
-                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[min_age]"
+                      externalMetadataColumnId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output].Columns[min_age]"
                       name="min_age"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[max_age]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output].Columns[max_age]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
-                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[max_age]"
+                      externalMetadataColumnId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output].Columns[max_age]"
                       name="max_age"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[note]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output].Columns[note]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].ExternalColumns[note]"
+                      externalMetadataColumnId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output].ExternalColumns[note]"
                       length="11"
-                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[note]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output].Columns[note]"
                       name="note"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output].ExternalColumns[min_age]"
                       dataType="i4"
                       name="min_age" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output].ExternalColumns[max_age]"
                       dataType="i4"
                       name="max_age" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].ExternalColumns[note]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output].ExternalColumns[note]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -1248,37 +698,587 @@ where minage= ? and maxage=? and note= ?</property>
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[min_age]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Error Output].Columns[min_age]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[min_age]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Error Output].Columns[min_age]"
                       name="min_age" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[max_age]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Error Output].Columns[max_age]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[max_age]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Error Output].Columns[max_age]"
                       name="max_age" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[note]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Error Output].Columns[note]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[note]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Error Output].Columns[note]"
                       name="note" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\So sanh maxage, minage,note"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="So sanh maxage, minage,note"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select minage,maxage,note from AgeGroup</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (Select minage,maxage,note from AgeGroup) [refTable]
+where [refTable].[minage] = ? and [refTable].[maxage] = ? and [refTable].[note] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="minage" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="maxage" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="note" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]};#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]};#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\So sanh maxage, minage,note.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\So sanh maxage, minage,note.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\So sanh maxage, minage,note.Inputs[Lookup Input].Columns[note]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="37"
+                      cachedName="note"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">note</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\So sanh maxage, minage,note.Inputs[Lookup Input].Columns[min_age]"
+                      cachedDataType="i4"
+                      cachedName="min_age"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">minage</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\So sanh maxage, minage,note.Inputs[Lookup Input].Columns[max_age]"
+                      cachedDataType="i4"
+                      cachedName="max_age"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">maxage</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\So sanh maxage, minage,note.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\So sanh maxage, minage,note.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\So sanh maxage, minage,note.Outputs[Lookup Match Output].Columns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="100"
+                      lineageId="Package\Data Flow Task\So sanh maxage, minage,note.Outputs[Lookup Match Output].Columns[note]"
+                      name="note"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">note</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\So sanh maxage, minage,note.Outputs[Lookup Match Output].Columns[maxage]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\So sanh maxage, minage,note.Outputs[Lookup Match Output].Columns[maxage]"
+                      name="maxage"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">maxage</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\So sanh maxage, minage,note.Outputs[Lookup Match Output].Columns[minage]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\So sanh maxage, minage,note.Outputs[Lookup Match Output].Columns[minage]"
+                      name="minage"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">minage</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\So sanh maxage, minage,note.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\So sanh maxage, minage,note.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\So sanh maxage, minage,note.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\So sanh maxage, minage,note.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\So sanh maxage, minage,note.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\So sanh maxage, minage,note.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\So sanh maxage, minage,note.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\So sanh maxage, minage,note.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Them cot ngaycapnhat"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Them cot ngaycapnhat"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Them cot ngaycapnhat.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Them cot ngaycapnhat.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Them cot ngaycapnhat.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Them cot ngaycapnhat.Outputs[Derived Column Output].Columns[lastModifiedAt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Them cot ngaycapnhat.Outputs[Derived Column Output].Columns[lastModifiedAt]"
+                      name="lastModifiedAt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Them cot ngaycapnhat.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Them cot ngaycapnhat.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Them cot ngaycapnhat.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Them cot ngaycapnhat.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Them cot ngaycapnhat.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Them cot ngaycapnhat.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="them cot ngaytao,ngaycapnhat"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Outputs[Derived Column Output].Columns[createdAt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Outputs[Derived Column Output].Columns[createdAt]"
+                      name="createdAt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Outputs[Derived Column Output].Columns[lastModifiedAt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Outputs[Derived Column Output].Columns[lastModifiedAt]"
+                      name="lastModifiedAt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\them du lieu vao agegroup"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="them du lieu vao agegroup"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AgeGroup]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\them du lieu vao agegroup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RTNJS8F\CUONGPHAM.covidNDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].Columns[note]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="37"
+                      cachedName="note"
+                      externalMetadataColumnId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].ExternalColumns[note]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[note]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].Columns[createdAt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="createdAt"
+                      externalMetadataColumnId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].ExternalColumns[createdAt]"
+                      lineageId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Outputs[Derived Column Output].Columns[createdAt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].Columns[lastModifiedAt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="lastModifiedAt"
+                      externalMetadataColumnId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].ExternalColumns[lastModifiedAt]"
+                      lineageId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Outputs[Derived Column Output].Columns[lastModifiedAt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].Columns[min_age]"
+                      cachedDataType="i4"
+                      cachedName="min_age"
+                      externalMetadataColumnId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].ExternalColumns[minAge]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[min_age]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].Columns[max_age]"
+                      cachedDataType="i4"
+                      cachedName="max_age"
+                      externalMetadataColumnId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].ExternalColumns[maxAge]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[max_age]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i8"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].ExternalColumns[minAge]"
+                      dataType="i4"
+                      name="minAge" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].ExternalColumns[maxAge]"
+                      dataType="i4"
+                      name="maxAge" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].ExternalColumns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="note" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].ExternalColumns[createdAt]"
+                      dataType="dbDate"
+                      name="createdAt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input].ExternalColumns[lastModifiedAt]"
+                      dataType="dbDate"
+                      name="lastModifiedAt" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\them du lieu vao agegroup.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\them du lieu vao agegroup.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\them du lieu vao agegroup.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\them du lieu vao agegroup.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\them du lieu vao agegroup.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1302,7 +1302,7 @@ where minage= ? and maxage=? and note= ?</property>
                       refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[min_age]"
                       cachedDataType="i4"
                       cachedName="min_age"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[min_age]">
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output].Columns[min_age]">
                       <properties>
                         <property
                           containsID="true"
@@ -1315,7 +1315,7 @@ where minage= ? and maxage=? and note= ?</property>
                       refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[max_age]"
                       cachedDataType="i4"
                       cachedName="max_age"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[max_age]">
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output].Columns[max_age]">
                       <properties>
                         <property
                           containsID="true"
@@ -1330,7 +1330,7 @@ where minage= ? and maxage=? and note= ?</property>
                       cachedDataType="str"
                       cachedLength="22"
                       cachedName="note"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[note]">
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output].Columns[note]">
                       <properties>
                         <property
                           containsID="true"
@@ -1351,7 +1351,7 @@ where minage= ? and maxage=? and note= ?</property>
                       refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[min_age]"
                       cachedDataType="i4"
                       cachedName="min_age"
-                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[min_age]">
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output].Columns[min_age]">
                       <properties>
                         <property
                           containsID="true"
@@ -1364,7 +1364,7 @@ where minage= ? and maxage=? and note= ?</property>
                       refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[max_age]"
                       cachedDataType="i4"
                       cachedName="max_age"
-                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[max_age]">
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output].Columns[max_age]">
                       <properties>
                         <property
                           containsID="true"
@@ -1379,7 +1379,7 @@ where minage= ? and maxage=? and note= ?</property>
                       cachedDataType="str"
                       cachedLength="37"
                       cachedName="note"
-                      lineageId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[note]">
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output].Columns[note]">
                       <properties>
                         <property
                           containsID="true"
@@ -1400,7 +1400,7 @@ where minage= ? and maxage=? and note= ?</property>
                       refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[min_age]"
                       cachedDataType="i4"
                       cachedName="min_age"
-                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[min_age]">
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output].Columns[min_age]">
                       <properties>
                         <property
                           containsID="true"
@@ -1413,7 +1413,7 @@ where minage= ? and maxage=? and note= ?</property>
                       refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[max_age]"
                       cachedDataType="i4"
                       cachedName="max_age"
-                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[max_age]">
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output].Columns[max_age]">
                       <properties>
                         <property
                           containsID="true"
@@ -1428,7 +1428,7 @@ where minage= ? and maxage=? and note= ?</property>
                       cachedDataType="str"
                       cachedLength="11"
                       cachedName="note"
-                      lineageId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output].Columns[note]">
+                      lineageId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output].Columns[note]">
                       <properties>
                         <property
                           containsID="true"
@@ -1491,42 +1491,42 @@ where minage= ? and maxage=? and note= ?</property>
           <paths>
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow Task\them du lieu vao agegroup.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]" />
+              startId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output1]"
-              endId="Package\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+              endId="Package\Data Flow Task\cap nhat agegroup.Inputs[OLE DB Command Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\Data Flow Task\Them cot ngaycapnhat.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Lookup Match Output]"
-              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              endId="Package\Data Flow Task\Them cot ngaycapnhat.Inputs[Derived Column Input]"
               name="Lookup Match Output"
-              startId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output]" />
+              startId="Package\Data Flow Task\So sanh maxage, minage,note.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Lookup No Match Output]"
-              endId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
+              endId="Package\Data Flow Task\them cot ngaytao,ngaycapnhat.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
-              startId="Package\Data Flow Task\Lookup.Outputs[Lookup No Match Output]" />
+              startId="Package\Data Flow Task\So sanh maxage, minage,note.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
               endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
               endId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow Task\OLE DB Source 1.Outputs[OLE DB Source Output]" />
+              startId="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[OLE DB Source Output2]"
               endId="Package\Data Flow Task\Union All.Inputs[Union All Input 3]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow Task\OLE DB Source 2.Outputs[OLE DB Source Output]" />
+              startId="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Union All Output 1]"
-              endId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
+              endId="Package\Data Flow Task\So sanh maxage, minage,note.Inputs[Lookup Input]"
               name="Union All Output 1"
               startId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]" />
           </paths>
@@ -1559,73 +1559,67 @@ where minage= ? and maxage=? and note= ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="152,41.6"
-          Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="228.333324260182,78.8666672934426" />
+          Size="259.2,41.6"
+          Id="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage"
+          TopLeft="94.9999962250391,73.6666672521167" />
         <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Data Flow Task\Lookup"
-          TopLeft="503.333313332664,358.800002851486" />
+          Size="252.8,41.6"
+          Id="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report"
+          TopLeft="423.333316511579,64.3333337810305" />
         <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Data Flow Task\OLE DB Source 1"
-          TopLeft="475.833314425416,77.3333338843452" />
+          Size="200.8,41.6"
+          Id="Package\Data Flow Task\them du lieu vao agegroup"
+          TopLeft="679.166639679009,568.466669194434" />
         <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Data Flow Task\OLE DB Source 2"
-          TopLeft="734.999970793726,97.2666672934426" />
+          Size="220,41.6"
+          Id="Package\Data Flow Task\them cot ngaytao,ngaycapnhat"
+          TopLeft="693.333305782743,466.200001715024" />
         <NodeLayout
           Size="120,41.6"
           Id="Package\Data Flow Task\Union All"
           TopLeft="497.499980231127,217.733334917492" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Data Flow Task\cap nhat agegroup"
+          TopLeft="193.333325650957,535.200003471375" />
+        <NodeLayout
+          Size="219.2,41.6"
+          Id="Package\Data Flow Task\So sanh maxage, minage,note"
+          TopLeft="503.333313332664,358.800002851486" />
+        <NodeLayout
+          Size="255.2,41.6"
+          Id="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report"
+          TopLeft="745.833303696582,70.4000004132589" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\Data Flow Task\Them cot ngaycapnhat"
+          TopLeft="204.166658553813,456.666668305927" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="304.333324260182,120.466667293443">
+          Id="Package\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="557.499980231127,259.333334917492">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="225.166655970945,97.2666676240498"
+              EndConnector="55.4333331015371,99.466667933994"
               Start="0,0"
-              End="225.166655970945,89.7666676240498">
+              End="55.4333331015371,91.966667933994">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.4347832330759" />
+                    End="0,45.733333966997" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,59.4347832330759"
-                    Point2="0,63.4347832330759"
-                    Point3="4,63.4347832330759" />
+                    Point1="0,45.733333966997"
+                    Point2="0,49.733333966997"
+                    Point3="4,49.733333966997" />
                   <mssgle:LineSegment
-                    End="221.166655970945,63.4347832330759" />
+                    End="51.4333331015371,49.733333966997" />
                   <mssgle:CubicBezierSegment
-                    Point1="221.166655970945,63.4347832330759"
-                    Point2="225.166655970945,63.4347832330759"
-                    Point3="225.166655970945,67.4347832330759" />
+                    Point1="51.4333331015371,49.733333966997"
+                    Point2="55.4333331015371,49.733333966997"
+                    Point3="55.4333331015371,53.733333966997" />
                   <mssgle:LineSegment
-                    End="225.166655970945,89.7666676240498" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
-          TopLeft="556.866647328272,118.933333884345">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,98.8000010331473"
-              Start="0,0"
-              End="0,91.3000010331473">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,91.3000010331473" />
+                    End="55.4333331015371,91.966667933994" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1636,30 +1630,30 @@ where minage= ? and maxage=? and note= ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output2]"
-          TopLeft="815.399970793726,138.866667293443">
+          TopLeft="873.433303696582,112.000000413259">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-229.899990562599,78.8666676240498"
+              EndConnector="-287.933323465455,105.733334504233"
               Start="0,0"
-              End="-229.899990562599,71.3666676240498">
+              End="-287.933323465455,98.2333345042331">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.434783233076" />
+                    End="0,64.9565225027607" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47.434783233076"
-                    Point2="0,51.434783233076"
-                    Point3="-4,51.434783233076" />
+                    Point1="0,64.9565225027607"
+                    Point2="0,68.9565225027607"
+                    Point3="-4,68.9565225027607" />
                   <mssgle:LineSegment
-                    End="-225.899990562599,51.434783233076" />
+                    End="-283.933323465455,68.9565225027607" />
                   <mssgle:CubicBezierSegment
-                    Point1="-225.899990562599,51.434783233076"
-                    Point2="-229.899990562599,51.434783233076"
-                    Point3="-229.899990562599,55.434783233076" />
+                    Point1="-283.933323465455,68.9565225027607"
+                    Point2="-287.933323465455,68.9565225027607"
+                    Point3="-287.933323465455,72.9565225027607" />
                   <mssgle:LineSegment
-                    End="-229.899990562599,71.3666676240498" />
+                    End="-287.933323465455,98.2333345042331" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1669,19 +1663,19 @@ where minage= ? and maxage=? and note= ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Union All Output 1]"
-          TopLeft="558.616646781896,259.333334917492">
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          TopLeft="553.616648371353,105.93333378103">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,99.466667933994"
+              EndConnector="0,111.800001136462"
               Start="0,0"
-              End="0,91.966667933994">
+              End="0,104.300001136462">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,91.966667933994" />
+                    End="0,104.300001136462" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1690,142 +1684,172 @@ where minage= ? and maxage=? and note= ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Data Flow Task\OLE DB Command"
-          TopLeft="193.333325650957,535.200003471375" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Data Flow Task\Derived Column"
-          TopLeft="204.166658553813,455.800001632373" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="542.266646665998,400.400002851486">
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="224.599996225039,115.266667252117">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-261.699988112185,55.3999987808862"
+              EndConnector="304.899984006088,102.466667665375"
               Start="0,0"
-              End="-261.699988112185,47.8999987808862">
+              End="304.899984006088,94.9666676653752">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.6248946070193" />
+                    End="0,62.8260876078534" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.6248946070193"
-                    Point2="0,22.6248946070193"
-                    Point3="-4,22.6248946070193" />
+                    Point1="0,62.8260876078534"
+                    Point2="0,66.8260876078534"
+                    Point3="4,66.8260876078534" />
                   <mssgle:LineSegment
-                    End="-257.699988112185,22.6248946070193" />
+                    End="300.899984006088,66.8260876078534" />
                   <mssgle:CubicBezierSegment
-                    Point1="-257.699988112185,22.6248946070193"
-                    Point2="-261.699988112185,22.6248946070193"
-                    Point3="-261.699988112185,26.6248946070193" />
+                    Point1="300.899984006088,66.8260876078534"
+                    Point2="304.899984006088,66.8260876078534"
+                    Point3="304.899984006088,70.8260876078534" />
                   <mssgle:LineSegment
-                    End="-261.699988112185,47.8999987808862" />
+                    End="304.899984006088,94.9666676653752" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-179.041380774843,27.6248946070193,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Data Flow Task\Derived Column 1"
-          TopLeft="693.333305782743,466.200001715024" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="577.199979999331,400.400002851486">
+          TopLeft="648.133313332664,400.400002851486">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="196.933325783412,65.7999988635381"
+              EndConnector="155.199992450079,65.799998863538"
               Start="0,0"
-              End="196.933325783412,58.2999988635381">
+              End="155.199992450079,58.299998863538">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.8721673680463" />
+                    End="0,22.6060864969958" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.8721673680463"
-                    Point2="0,26.8721673680463"
-                    Point3="4,26.8721673680463" />
+                    Point1="0,22.6060864969958"
+                    Point2="0,26.6060864969958"
+                    Point3="4,26.6060864969958" />
                   <mssgle:LineSegment
-                    End="192.933325783412,26.8721673680463" />
+                    End="151.199992450079,26.6060864969958" />
                   <mssgle:CubicBezierSegment
-                    Point1="192.933325783412,26.8721673680463"
-                    Point2="196.933325783412,26.8721673680463"
-                    Point3="196.933325783412,30.8721673680463" />
+                    Point1="151.199992450079,26.6060864969958"
+                    Point2="155.199992450079,26.6060864969958"
+                    Point3="155.199992450079,30.6060864969958" />
                   <mssgle:LineSegment
-                    End="196.933325783412,58.2999988635381" />
+                    End="155.199992450079,58.299998863538" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="42.6602761729559,31.8721673680463,111.6127734375,11.609375"
+              BoundingBox="21.7936095062895,31.6060864969958,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="679.166639679009,568.466669194434" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="774.133305782743,507.800001715025">
+          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="577.733313332664,400.400002851486">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-9.36666610373391,60.666667479409"
+              EndConnector="-281.566654778851,56.2666654544413"
               Start="0,0"
-              End="-9.36666610373391,53.166667479409">
+              End="-281.566654778851,48.7666654544413">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.3333337397045" />
+                    End="0,18.7513038576654" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.3333337397045"
-                    Point2="0,30.3333337397045"
-                    Point3="-4,30.3333337397045" />
+                    Point1="0,18.7513038576654"
+                    Point2="0,22.7513038576654"
+                    Point3="-4,22.7513038576654" />
                   <mssgle:LineSegment
-                    End="-5.36666610373391,30.3333337397045" />
+                    End="-277.566654778851,22.7513038576654" />
                   <mssgle:CubicBezierSegment
-                    Point1="-5.36666610373391,30.3333337397045"
-                    Point2="-9.36666610373391,30.3333337397045"
-                    Point3="-9.36666610373391,34.3333337397045" />
+                    Point1="-277.566654778851,22.7513038576654"
+                    Point2="-281.566654778851,22.7513038576654"
+                    Point3="-281.566654778851,26.7513038576654" />
                   <mssgle:LineSegment
-                    End="-9.36666610373391,53.166667479409" />
+                    End="-281.566654778851,48.7666654544413" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-188.974714108176,27.7513038576654,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="278.749992102385,497.400001632373">
+          TopLeft="296.166658553813,498.266668305927">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.8000018390019"
+              EndConnector="-20.433332902856,36.9333351654477"
               Start="0,0"
-              End="0,30.3000018390019">
+              End="-20.433332902856,29.4333351654477">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.3000018390019" />
+                    End="0,14.4666675827238" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.4666675827238"
+                    Point2="0,18.4666675827238"
+                    Point3="-4,18.4666675827238" />
+                  <mssgle:LineSegment
+                    End="-16.433332902856,18.4666675827238" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.433332902856,18.4666675827238"
+                    Point2="-20.433332902856,18.4666675827238"
+                    Point3="-20.433332902856,22.4666675827238" />
+                  <mssgle:LineSegment
+                    End="-20.433332902856,29.4333351654477" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="803.333305782743,507.800001715024">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23.766666103734,60.66666747941"
+              Start="0,0"
+              End="-23.766666103734,53.16666747941">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.333333739705" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.333333739705"
+                    Point2="0,30.333333739705"
+                    Point3="-4,30.333333739705" />
+                  <mssgle:LineSegment
+                    End="-19.766666103734,30.333333739705" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.766666103734,30.333333739705"
+                    Point2="-23.766666103734,30.333333739705"
+                    Point3="-23.766666103734,34.333333739705" />
+                  <mssgle:LineSegment
+                    End="-23.766666103734,53.16666747941" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1838,7 +1862,7 @@ where minage= ? and maxage=? and note= ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
+    design-time-name="Package\Data Flow Task\Lay nhom tuoi tu nguon Vaccine_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1846,12 +1870,33 @@ where minage= ? and maxage=? and note= ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup">
+    design-time-name="Package\Data Flow Task\Lay nhom tuoi tu canada_case_report">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\them du lieu vao agegroup">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\So sanh maxage, minage,note">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1861,7 +1906,7 @@ where minage= ? and maxage=? and note= ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1869,31 +1914,10 @@ where minage= ? and maxage=? and note= ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source 1">
+    design-time-name="Package\Data Flow Task\Lay nhom tuoi tu Ontario_Case_report">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source 2">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
